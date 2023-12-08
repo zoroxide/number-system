@@ -51,7 +51,7 @@ int main() {
             cin >> binaryNumber;
 
             int decimalNumber = binaryToDecimal(binaryNumber);
-            cout << "Decimal equivalent: " << decimalNumber << endl;
+            cout << "Decimal: " << decimalNumber << endl;
             stars(30, '=');
             break;
         }
@@ -62,12 +62,12 @@ int main() {
             cin >> decimalNumber;
 
             long long binaryNumber = decimalToBinary(decimalNumber);
-            cout << "Binary equivalent: " << binaryNumber << endl;
+            cout << "Binary: " << binaryNumber << endl;
             stars(30, '=');
             break;
         }
         default:
-            cout << "Invalid choice. Please choose either 1 or 2.\n";
+            cout << "Invalid choice\n";
             stars(30, '=');
             return 1; // Exit the program with an error code
     }
