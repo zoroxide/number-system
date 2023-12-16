@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Function to convert binary to decimal
 int binaryToDecimal(long long binaryNumber) {
     int decimalNumber = 0, i = 0, remainder;
     while (binaryNumber != 0) {
@@ -15,7 +14,7 @@ int binaryToDecimal(long long binaryNumber) {
     return decimalNumber;
 }
 
-// Function to convert decimal to binary
+
 long long decimalToBinary(int decimalNumber) {
     long long binaryNumber = 0;
     int remainder, i = 1;
@@ -28,18 +27,30 @@ long long decimalToBinary(int decimalNumber) {
     return binaryNumber;
 }
 
-
-void stars(int num, char sym){
-    for(int i = 0; i<num; i++){
-        cout<<sym;
-    }
-    cout<<endl;
+long long onesComplement(long long binaryNumber) {
+    // Invert each bit of the binary number
+    return binaryNumber ^ 1111111111; 
 }
+
+long long twosComplement(long long binaryNumber) {
+    // Find one's complement and add 1 to it
+    return onesComplement(binaryNumber) + 1;
+}
+
+void stars(int num, char sym) {
+    for (int i = 0; i < num; i++) {
+        cout << sym;
+    }
+    cout << endl;
+}
+
 int main() {
     int choice;
     cout << "1) Binary to Decimal\n";
     cout << "2) Decimal to Binary\n";
-    cout << "your choice(1/2): ";
+    cout << "3) One's complement\n";
+    cout << "4) Two's complement\n";
+    cout << "Your choice (1/2/3/4): ";
     cin >> choice;
 
     stars(60, '=');
@@ -56,7 +67,6 @@ int main() {
             break;
         }
         case 2: {
-            // Convert Decimal to Binary
             int decimalNumber;
             cout << "Enter a decimal number: ";
             cin >> decimalNumber;
@@ -66,10 +76,30 @@ int main() {
             stars(30, '=');
             break;
         }
+        case 3: {
+            int binaryNumber;
+            cout << "Enter a binary number: ";
+            cin >> binaryNumber;
+
+            long long onesComplementResult = onesComplement(binaryNumber);
+            cout << "One's complement: " << onesComplementResult << endl;
+            stars(30, '=');
+            break;
+        }
+        case 4: {
+            int binaryNumber;
+            cout << "Enter a binary number: ";
+            cin >> binaryNumber;
+
+            long long twosComplementResult = twosComplement(binaryNumber);
+            cout << "Two's complement: " << twosComplementResult << endl;
+            stars(30, '=');
+            break;
+        }
         default:
             cout << "Invalid choice\n";
             stars(30, '=');
-            return 1; // Exit the program with an error code
+            return 1;
     }
     return 0;
 }
