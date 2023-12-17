@@ -1,16 +1,17 @@
 #include <iostream>
 #include <cmath>
+using namespace std;
 
 int main() {
 
     double sideLength, hypotenuse;
 
  
-    std::cout << "Enter the length of one side of the square: ";
-    std::cin >> sideLength;
+    cout << "Enter the length of one side of the square: ";
+    cin >> sideLength;
 
-    std::cout << "Enter the length of the hypotenuse: ";
-    std::cin >> hypotenuse;
+    cout << "Enter the length of the hypotenuse: ";
+    cin >> hypotenuse;
 
 
     //Pythagorean theorem: a^2 + b^2 = c^2
@@ -18,7 +19,7 @@ int main() {
 
     double area = sideLength * sideLength;
 
-    std::cout << "The area of the square is: " << area << std::endl;
+    cout << "The area of the square is: " << area << std::endl;
 
     return 0;
 }
