@@ -28,12 +28,10 @@ long long decimalToBinary(int decimalNumber) {
 }
 
 long long onesComplement(long long binaryNumber) {
-    // Invert each bit of the binary number
     return binaryNumber ^ 1111111111; 
 }
 
-long long twosComplement(long long binaryNumber) {
-    // Find one's complement and add 1 to it
+long long twosComplement(long long binaryNumber) {
     return onesComplement(binaryNumber) + 1;
 }
 
